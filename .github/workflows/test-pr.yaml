@@ -5,6 +5,8 @@ on:
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
     outputs:
       templates: ${{ steps.filter.outputs.changes }}
     steps:
