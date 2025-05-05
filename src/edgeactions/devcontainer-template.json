@@ -1,0 +1,11 @@
+{
+    "id": "edgeactions",
+    "version": "0.0.1",
+    "name": "EdgeActions Development Container",
+    "description": "A development container for EdgeActions projects, providing tools and dependencies for building, testing, and deploying EdgeActions.",
+    "documentationURL": "https://github.com/microsoft/edgeactions-devcontainers/tree/main/src/edgeactions",
+    "licenseURL": "https://github.com/microsoft/edgeactions-devcontainers/blob/main/LICENSE",
+    "platforms": [
+        "Any"
+    ]
+}
