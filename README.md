@@ -1,18 +1,24 @@
-# Project
+# EdgeActions Development Container Templates
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository contains devcontainer templates for EdgeActions development environments. These templates help developers quickly set up consistent development environments for working with EdgeActions.
 
-As the maintainer of this project, please make a few updates:
+## Available Templates
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- **EdgeActions**: A devcontainer template for EdgeActions development, providing all the necessary tools and dependencies.
+
+## Usage
+
+1. Install [Visual Studio Code](https://code.visualstudio.com/)
+2. Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+3. Create a new project or open an existing EdgeActions project
+4. Press F1, select "Dev Containers: Add Dev Container Configuration Files..."
+5. Select "EdgeActions Development Container" from the template options
+
+For more detailed instructions, see the README in the specific template directory.
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
