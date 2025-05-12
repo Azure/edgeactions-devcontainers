@@ -18,10 +18,8 @@ jobs:
         with:
           publish-templates: "true"
           base-path-to-templates: "./src"
-      #     generate-docs: "true"
-
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Create PR for Documentation
       #   id: push_image_info
