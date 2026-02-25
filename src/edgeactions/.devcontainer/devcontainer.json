@@ -1,6 +1,6 @@
 {
 	"name": "EdgeActions",
-	"dockerComposeFile": "docker-compose.yml",
+	"dockerComposeFile": ["docker-compose.yml", "docker-compose.override.yml"],
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"initializeCommand": ["bash", ".devcontainer/initialize.sh"],

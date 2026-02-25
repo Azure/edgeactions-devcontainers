@@ -17,15 +17,16 @@ jobs:
             edgeactions: ./**/edgeactions/**
   test:
     needs: [detect-changes]
-    runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
       matrix:
         templates: ${{ fromJSON(needs.detect-changes.outputs.templates) }}
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
 
-      - name: Smoke test for '${{ matrix.templates }}'
+      - name: Smoke test for '${{ matrix.templates }}' on ${{ matrix.os }}
         id: smoke_test
         uses: ./.github/actions/smoke-test
         with:
