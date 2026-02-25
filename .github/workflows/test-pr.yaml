@@ -22,10 +22,15 @@ jobs:
     strategy:
       matrix:
         templates: ${{ fromJSON(needs.detect-changes.outputs.templates) }}
+        kvm: [true, false]
     steps:
       - uses: actions/checkout@v3
 
-      - name: Smoke test for '${{ matrix.templates }}'
+      - name: Disable KVM
+        if: matrix.kvm == false
+        run: sudo mv /dev/kvm /dev/kvm.bak
+
+      - name: Smoke test for '${{ matrix.templates }}' (KVM=${{ matrix.kvm }})
         id: smoke_test
         uses: ./.github/actions/smoke-test
         with:

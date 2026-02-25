@@ -6,6 +6,10 @@ This repository contains devcontainer templates for EdgeActions development envi
 
 - **EdgeActions**: A devcontainer template for EdgeActions development, providing all the necessary tools and dependencies.
 
+### KVM (Optional but Recommended)
+
+EdgeActions test commands require KVM (Kernel-based Virtual Machine) for virtualization.
+
 ## Usage
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/)
