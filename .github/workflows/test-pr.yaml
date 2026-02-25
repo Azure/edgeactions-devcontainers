@@ -28,7 +28,7 @@ jobs:
 
       - name: Disable KVM
         if: matrix.kvm == false
-        run: sudo chmod 000 /dev/kvm
+        run: sudo mv /dev/kvm /dev/kvm.bak
 
       - name: Smoke test for '${{ matrix.templates }}' (KVM=${{ matrix.kvm }})
         id: smoke_test
