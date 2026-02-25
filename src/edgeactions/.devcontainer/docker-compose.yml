@@ -2,7 +2,5 @@ services:
   devcontainer:
     image: mcr.microsoft.com/azurefrontdooredgeactions/edgeactiondev:latest
     user: vscode
-    stdin_open: true
-    tty: true
     volumes:
       - ..:/workspaces/app:cached
