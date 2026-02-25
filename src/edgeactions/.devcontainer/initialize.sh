@@ -26,5 +26,4 @@ else
   echo ""
   # Create empty override (required since dockerComposeFile references it)
   echo "services: {}" > "$OVERRIDE_FILE"
-EOF
 fi
