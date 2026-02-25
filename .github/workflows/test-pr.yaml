@@ -28,6 +28,8 @@ jobs:
 
       - name: Smoke test for '${{ matrix.templates }}' on ${{ matrix.os }}
         id: smoke_test
+        env:
+          MSYS_NO_PATHCONV: 1
         uses: ./.github/actions/smoke-test
         with:
           template: "${{ matrix.templates }}"

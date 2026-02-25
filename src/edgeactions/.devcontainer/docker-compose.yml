@@ -4,3 +4,5 @@ services:
     user: vscode
     stdin_open: true
     tty: true
+    volumes:
+      - ..:/workspaces/${localWorkspaceFolderBasename}:cached
