@@ -2,7 +2,7 @@
 	"name": "EdgeActions",
 	"dockerComposeFile": ["docker-compose.yml", "docker-compose.override.yml"],
 	"service": "devcontainer",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"workspaceFolder": "/workspaces/app",
 	"initializeCommand": ["bash", ".devcontainer/initialize.sh"],
 	"postStartCommand": "if [ -e /dev/kvm ]; then sudo chown -R vscode:vscode /dev/kvm; fi",
 	"customizations": {
