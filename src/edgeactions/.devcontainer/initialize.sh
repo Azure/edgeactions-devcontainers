@@ -15,15 +15,17 @@ services:
       DEVICE: /dev/kvm
 EOF
 else
-  echo ""
-  echo "========================================================================"
-  echo "  WARNING: KVM NOT DETECTED"
-  echo "========================================================================"
-  echo "  /dev/kvm is not available on this machine."
-  echo ""
-  echo "  EdgeActions test commands will NOT work without KVM."
-  echo "========================================================================"
-  echo ""
+  cat <<'WARNING'
+
+========================================================================
+  WARNING: KVM NOT DETECTED
+========================================================================
+  /dev/kvm is not available on this machine.
+
+  EdgeActions test commands will NOT work without KVM.
+========================================================================
+
+WARNING
   # Create empty override (required since dockerComposeFile references it)
   echo "services: {}" > "$OVERRIDE_FILE"
 fi
