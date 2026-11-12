@@ -3,7 +3,7 @@
 	"dockerComposeFile": ["docker-compose.yml", "docker-compose.override.yml"],
 	"service": "devcontainer",
 	"workspaceFolder": "/workspaces/app",
-	"initializeCommand": ["bash", ".devcontainer/initialize.sh"],
+	"initializeCommand": "docker run --rm -i -v /dev:/host-dev:ro --entrypoint sh mcr.microsoft.com/azurefrontdooredgeactions/edgeactiondev:latest -s < .devcontainer/initialize.sh > .devcontainer/docker-compose.override.yml",
 	"postStartCommand": "if [ -e /dev/kvm ]; then sudo chown -R vscode:vscode /dev/kvm; fi",
 	"customizations": {
 		"vscode": {

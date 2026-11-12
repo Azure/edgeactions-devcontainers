@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
-# Detects KVM availability and generates docker-compose.override.yml if present
-set -e
+#!/bin/sh
+# Runs inside a probe container (see initializeCommand) with the Docker host's
+# /dev mounted at /host-dev. Prints docker-compose.override.yml to stdout.
 
-OVERRIDE_FILE=".devcontainer/docker-compose.override.yml"
-
-if [ -e /dev/kvm ]; then
-  echo "KVM detected, enabling KVM for EdgeActions..."
-  cat > "$OVERRIDE_FILE" <<EOF
+if [ -c /host-dev/kvm ]; then
+  echo "KVM detected on Docker host, enabling KVM for EdgeActions..." >&2
+  cat <<'EOF'
 services:
   devcontainer:
     devices:
@@ -15,17 +13,17 @@ services:
       DEVICE: /dev/kvm
 EOF
 else
-  cat <<'WARNING'
+  cat >&2 <<'WARNING'
 
 ========================================================================
   WARNING: KVM NOT DETECTED
 ========================================================================
-  /dev/kvm is not available on this machine.
+  /dev/kvm is not available on the Docker host.
 
   EdgeActions test commands will NOT work without KVM.
 ========================================================================
 
 WARNING
-  # Create empty override (required since dockerComposeFile references it)
-  echo "services: {}" > "$OVERRIDE_FILE"
+  # Empty override (required since dockerComposeFile references it)
+  echo "services: {}"
 fi
